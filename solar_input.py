@@ -49,13 +49,13 @@ def parse_star_parameters(line, star):
     """
 
     attrs = line.split(' ')
-    star.R = attrs[1]
+    star.R = float(attrs[1])
     star.color = attrs[2]
-    star.m = attrs[3]
-    star.x = attrs[4]
-    star.y = attrs[5]
-    star.Vx = attrs[6]
-    star.Vy = attrs[7]
+    star.m = float(attrs[3])
+    star.x = float(attrs[4])
+    star.y = float(attrs[5])
+    star.Vx = float(attrs[6])
+    star.Vy = float(attrs[7])
     star.type = "star"
 
 def parse_planet_parameters(line, planet):
@@ -75,13 +75,13 @@ def parse_planet_parameters(line, planet):
     """
 
     attrs = line.split(' ')
-    planet.R = attrs[1]
+    planet.R = float(attrs[1])
     planet.color = attrs[2]
-    planet.m = attrs[3]
-    planet.x = attrs[4]
-    planet.y = attrs[5]
-    planet.Vx = attrs[6]
-    planet.Vy = attrs[7]
+    planet.m = float(attrs[3])
+    planet.x = float(attrs[4])
+    planet.y = float(attrs[5])
+    planet.Vx = float(attrs[6])
+    planet.Vy = float(attrs[7])
     planet.type = "planet"
 
 
