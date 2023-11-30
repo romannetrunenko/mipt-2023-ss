@@ -102,6 +102,7 @@ def write_space_objects_data_to_file(output_filename, space_objects):
             line = f'{obj.type.capitalize()} {obj.R} {obj.color} {obj.m} {obj.x} {obj.y} {obj.Vx} {obj.Vy}'
             out_file.write(line + '\n')
 
+
 # FIXME: хорошо бы ещё сделать функцию, сохранающую статистику в заданный файл...
 
 if __name__ == "__main__":

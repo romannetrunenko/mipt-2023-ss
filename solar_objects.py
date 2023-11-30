@@ -1,8 +1,14 @@
 # coding: utf-8
 # license: GPLv3
 
+class SpaceBody:
+    x_stats = []
+    y_stats = []
+    vx_stats = []
+    vy_stats = []
+    t_stats = []
 
-class Star:
+class Star(SpaceBody):
     """Тип данных, описывающий звезду.
     Содержит массу, координаты, скорость звезды,
     а также визуальный радиус звезды в пикселах и её цвет.
@@ -46,7 +52,7 @@ class Star:
     track = 0
 
 
-class Planet:
+class Planet(SpaceBody):
     """Тип данных, описывающий планету.
     Содержит массу, координаты, скорость планеты,
     а также визуальный радиус планеты в пикселах и её цвет

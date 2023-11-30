@@ -25,6 +25,7 @@ time_step = None
 space_objects = []
 """Список космических объектов."""
 
+file = open("results.txt")
 
 def execution():
     """Функция исполнения -- выполняется циклически, вызывая обработку всех небесных тел,
@@ -74,6 +75,7 @@ def open_file_dialog():
     Считанные объекты сохраняются в глобальный список space_objects
     """
     global space_objects
+    global file
     global perform_execution
     perform_execution = False
     for obj in space_objects:
@@ -111,6 +113,7 @@ def main():
     global time_speed
     global space
     global start_button
+    global file
 
     print('Modelling started!')
     physical_time = 0
@@ -146,6 +149,7 @@ def main():
     time_label.pack(side=tkinter.RIGHT)
     frame.place(x=0, y=0)
     root.mainloop()
+    file.close()
     print('Modelling finished!')
 
 if __name__ == "__main__":

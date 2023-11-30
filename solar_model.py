@@ -1,6 +1,6 @@
 # coding: utf-8
 # license: GPLv3
-
+from solar_main import physical_time
 gravitational_constant = 6.67408E-11
 """Гравитационная постоянная Ньютона G"""
 
@@ -39,10 +39,23 @@ def move_space_object(body, dt):
     body.y += body.Vy * dt + ay * dt ** 2 / 2
     body.Vy += ay * dt
 
+time_since_last_stat_save = 0
+stat_save_time_resolution = 300000
+
+def update_stats(space_objects, dt):
+    global time_since_last_stat_save
+    time_since_last_stat_save += dt
+    if time_since_last_stat_save > stat_save_time_resolution:
+        time_since_last_stat_save = 0
+        for obj in space_objects:
+            obj.t_stats.append(physical_time)
+            obj.x_stats.append(obj.x)
+            obj.y_stats.append(obj.y)
+            obj.vx_stats.append(obj.vx)
+            obj.vy_stats.append(obj.vy)
 
 def recalculate_space_objects_positions(space_objects, dt):
     """Пересчитывает координаты объектов.
-
     Параметры:
 
     **space_objects** — список оьъектов, для которых нужно пересчитать координаты.
@@ -53,6 +66,7 @@ def recalculate_space_objects_positions(space_objects, dt):
         calculate_force(body, space_objects)
     for body in space_objects:
         move_space_object(body, dt)
+    update_stats(space_objects, dt)
 
 
 if __name__ == "__main__":
