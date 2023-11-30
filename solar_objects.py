@@ -41,6 +41,10 @@ class Star:
     image = None
     """Изображение звезды"""
 
+    name = None
+
+    track = 0
+
 
 class Planet:
     """Тип данных, описывающий планету.
@@ -80,3 +84,7 @@ class Planet:
 
     image = None
     """Изображение планеты"""
+
+    name = None
+
+    track = 0
