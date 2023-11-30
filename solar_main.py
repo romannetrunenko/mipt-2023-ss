@@ -10,10 +10,6 @@ from solar_input import *
 perform_execution = False
 """Флаг цикличности выполнения расчёта"""
 
-physical_time = 0
-"""Физическое время от начала расчёта.
-Тип: float"""
-
 displayed_time = None
 """Отображаемое на экране время.
 Тип: переменная tkinter"""

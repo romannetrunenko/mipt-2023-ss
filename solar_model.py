@@ -1,9 +1,8 @@
 # coding: utf-8
 # license: GPLv3
-from solar_main import physical_time
 gravitational_constant = 6.67408E-11
 """Гравитационная постоянная Ньютона G"""
-
+physical_time = 0
 
 def calculate_force(body, space_objects):
     """Вычисляет силу, действующую на тело.
@@ -51,8 +50,8 @@ def update_stats(space_objects, dt):
             obj.t_stats.append(physical_time)
             obj.x_stats.append(obj.x)
             obj.y_stats.append(obj.y)
-            obj.vx_stats.append(obj.vx)
-            obj.vy_stats.append(obj.vy)
+            obj.vx_stats.append(obj.Vx)
+            obj.vy_stats.append(obj.Vy)
 
 def recalculate_space_objects_positions(space_objects, dt):
     """Пересчитывает координаты объектов.
